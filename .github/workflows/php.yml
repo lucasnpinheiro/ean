@@ -17,8 +17,8 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'  # Defina aqui a versão desejada
-          extensions: mbstring, xml
+          php-version: '8.2'
+
 
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
