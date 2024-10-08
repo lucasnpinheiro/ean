@@ -23,7 +23,7 @@ class EanExtractor
         $this->ean = $this->eanCode;
     }
 
-    public function getObject(): stdClass
+    public function toObject(): stdClass
     {
         return (object)$this->toArray();
     }
