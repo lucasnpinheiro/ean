@@ -26,12 +26,12 @@ print_r($eanExists->toObject());
 Array
 (
     [ean_code] => 2018740009892
-    [ean] => 2018740009892
-    [value] => 
     [scale_product] => 
     [international_number] => 
     [custom_code_999] => 
     [custom_code_2] => 1
+    [code] => 01874
+    [value] => 000989
 )
 ```
 
@@ -39,11 +39,11 @@ Array
 stdClass Object
 (
     [ean_code] => 2018740009892
-    [ean] => 01874
-    [value] => 000989
     [scale_product] => 
     [international_number] => 
     [custom_code_999] => 
     [custom_code_2] => 1
+    [code] => 01874
+    [value] => 000989
 )
 ```

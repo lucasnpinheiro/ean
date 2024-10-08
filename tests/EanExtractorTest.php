@@ -133,7 +133,7 @@ class EanExtractorTest extends TestCase
         $this->assertTrue($extractor->isCustomCode2());
 
         // Verifica a extração correta dos valores
-        $this->assertEquals('01874', $extractor->ean());
+        $this->assertEquals('01874', $extractor->code());
         $this->assertEquals('000989', $extractor->value());
     }
 

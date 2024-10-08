@@ -9,7 +9,7 @@ use stdClass;
 
 class EanExtractor
 {
-    private string $ean = '';
+    private string $code = '';
     private string $value = '';
 
     public function __construct(private string $eanCode = '')
@@ -20,7 +20,7 @@ class EanExtractor
             throw new InvalidArgumentException('EAN code cannot be empty');
         }
 
-        $this->ean = $this->eanCode;
+        $this->code = $this->eanCode;
     }
 
     public function toObject(): stdClass
@@ -32,12 +32,12 @@ class EanExtractor
     {
         return [
             'ean_code' => $this->eanCode(),
-            'ean' => $this->ean(),
-            'value' => $this->value(),
             'scale_product' => $this->isScaleProduct(),
             'international_number' => $this->hasInternationalNumber(),
             'custom_code_999' => $this->isCustomCode999(),
             'custom_code_2' => $this->isCustomCode2(),
+            'code' => $this->code(),
+            'value' => $this->value(),
         ];
     }
 
@@ -46,9 +46,9 @@ class EanExtractor
         return $this->eanCode;
     }
 
-    public function ean(): string
+    public function code(): string
     {
-        return $this->ean;
+        return $this->code;
     }
 
     public function value(): string{
@@ -60,7 +60,7 @@ class EanExtractor
         $firstDigit = substr($this->eanCode, 0, 1);
 
         if (strlen($this->eanCode) === 7 && $firstDigit === '9') {
-            $this->ean = $this->eanCode;
+            $this->code = $this->eanCode;
             return true;
         }
         return false;
@@ -76,7 +76,7 @@ class EanExtractor
         $firstThreeDigits = substr($this->eanCode, 0, 3);
 
         if (strlen($this->eanCode) === 13 && $firstThreeDigits === '999') {
-            $this->ean = substr($this->eanCode, 0, 12);
+            $this->code = substr($this->eanCode, 0, 12);
             return true;
         }
         return false;
@@ -87,7 +87,7 @@ class EanExtractor
         $firstDigit = substr($this->eanCode, 0, 1);
 
         if (strlen($this->eanCode) === 13 && $firstDigit === '2') {
-            $this->ean = substr($this->eanCode, 1, 5);
+            $this->code = substr($this->eanCode, 1, 5);
             $this->value = substr($this->eanCode, 6, 6);
             return true;
         }
