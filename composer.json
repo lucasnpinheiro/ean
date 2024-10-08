@@ -21,7 +21,8 @@
         }
     },
     "scripts": {
-        "test": "phpunit --configuration phpunit.xml --testdox tests"
+        "test": "phpunit --configuration phpunit.xml",
+        "testdox": "phpunit --configuration phpunit.xml --testdox tests"
     },
     "authors": [
         {
