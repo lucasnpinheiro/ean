@@ -14,7 +14,6 @@
             "Lucasnpinheiro\\test\\Ean\\": "tests/"
         }
     },
-    "version": "1.0.0",
     "scripts": {
         "test": "phpunit --configuration phpunit.xml"
     },
