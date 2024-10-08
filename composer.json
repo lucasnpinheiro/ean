@@ -5,22 +5,34 @@
         "php": "^8.2"
     },
     "require-dev": {
+        "codeception/codeception": "^1.1",
+        "phpspec/phpspec": "^2.0",
         "phpunit/phpunit": "^11.4"
     },
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Lucasnpinheiro\\Ean\\": "src/",
-            "Lucasnpinheiro\\test\\Ean\\": "tests/"
+            "Lucasnpinheiro\\Ean\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lucasnpinheiro\\Ean\\Tests\\": "tests/"
         }
     },
     "scripts": {
-        "test": "phpunit --configuration phpunit.xml"
+        "test": "phpunit --configuration phpunit.xml --testdox tests"
     },
     "authors": [
         {
             "name": "lucasnpinheiro",
             "email": "lucasnpinheiro@gmail.com"
         }
-    ]
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

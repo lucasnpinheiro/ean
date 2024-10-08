@@ -57,7 +57,7 @@ class EanExtractor
 
     public function isScaleProduct(): bool
     {
-        $firstDigit = substr($this->eanCode, 0, 1);
+        $firstDigit = $this->eanCode[0];
 
         if (strlen($this->eanCode) === 7 && $firstDigit === '9') {
             $this->code = $this->eanCode;
@@ -84,7 +84,7 @@ class EanExtractor
 
     public function isCustomCode2(): bool
     {
-        $firstDigit = substr($this->eanCode, 0, 1);
+        $firstDigit = $this->eanCode[0];
 
         if (strlen($this->eanCode) === 13 && $firstDigit === '2') {
             $this->code = substr($this->eanCode, 1, 5);

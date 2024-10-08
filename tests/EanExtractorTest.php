@@ -1,8 +1,7 @@
 <?php
 
-namespace Lucasnpinheiro\test\Ean;
+namespace Lucasnpinheiro\Ean\Tests;
 
-use InvalidArgumentException;
 use Lucasnpinheiro\Ean\EanExtractor;
 use PHPUnit\Framework\TestCase;
 
